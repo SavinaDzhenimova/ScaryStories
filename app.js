@@ -4,6 +4,7 @@ function solve() {
   let firstNameElement = document.getElementById("first-name");
   let lastNameElement = document.getElementById("last-name");
   let ageElement = document.getElementById("age");
+  let genreElement = document.getElementById("genre");
   let storyTitleElement = document.getElementById("story-title");
   let storyElement = document.getElementById("story");
   let publishBtnElement = document.getElementById("form-btn");
@@ -18,6 +19,7 @@ function solve() {
     if (firstNameElement.value == ''
       || lastNameElement.value == ''
       || ageElement.value == ''
+      || genreElement.value == ''
       || storyTitleElement.value == ''
       || storyElement.value == '') {
       return;
@@ -33,6 +35,9 @@ function solve() {
 
     let Age = document.createElement("p");
     Age.textContent = `Age: ${ageElement.value}`;
+
+    let genre = document.createElement("p");
+    genre.textContent = `Genre: ${genreElement.value}`;
 
     let StoryTitle = document.createElement("p");
     StoryTitle.textContent = `Title: ${storyTitleElement.value}`;
@@ -55,6 +60,7 @@ function solve() {
 
     articleElement.appendChild(fullName);
     articleElement.appendChild(Age);
+    articleElement.appendChild(genre);
     articleElement.appendChild(StoryTitle);
     articleElement.appendChild(StoryText);
 
@@ -69,12 +75,14 @@ function solve() {
     let editFirstName = firstNameElement.value;
     let editLastName = lastNameElement.value;
     let editAge = ageElement.value;
+    let editGenre = genreElement.value;
     let editTitle = storyTitleElement.value;
     let editStory = storyElement.value;
 
     firstNameElement.value = "";
     lastNameElement.value = "";
     ageElement.value = "";
+    genreElement.value = "";
     storyTitleElement.value = "";
     storyElement.value = "";
 
@@ -97,6 +105,7 @@ function solve() {
       firstNameElement.value = editFirstName;
       lastNameElement.value = editLastName;
       ageElement.value = editAge;
+      genreElement.value = editGenre;
       storyTitleElement.value = editTitle;
       storyElement.value = editStory;
 
